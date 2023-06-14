@@ -37,7 +37,7 @@ runs:
     - name: Run action under Windows
       if: runner.os == 'Windows'
       run: |
-        curl -o "${{ inputs.path }}" "${{ inputs.source }}"
+        curl -L -o "${{ inputs.path }}" "${{ inputs.source }}"
         chmod 777 "${{ inputs.path }}"
         "${{ inputs.path }}" build "${{inputs.dir}}"
       shell: cmd
