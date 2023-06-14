@@ -21,7 +21,7 @@ runs:
   using: "composite"
   steps:
     - name: Download Executable
-      run: curl --max-redirs 10 -L -o "${{ inputs.path }}" "${{ inputs.source }}"
+      run: curl -L -o "${{ inputs.path }}" "${{ inputs.source }}"
       if: runner.os != 'Windows'
       shell: bash
     - name: Change Permissions
